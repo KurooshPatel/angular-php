@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
   isValid=true;
   loginForm:any;
   constructor(private formBuilder:FormBuilder,private loginService:LoginService, private router:Router) {
-    console.log("here")
     this.loginForm=formBuilder.group({
       "uname":[null, Validators.required],
       "psw":[null,Validators.required]
@@ -31,8 +30,7 @@ export class LoginComponent implements OnInit {
     console.log('hello',values);
     this.loginService.login(values.uname,values.psw).subscribe(users=>{
       if(users.first_name){
-        // this.router.navigate(["user/profile"]);
-        console.log(users,users.first_name)
+        this.router.navigate(["user/profile"]);
       }else{
         this.isValid=false
       }
