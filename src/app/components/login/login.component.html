@@ -1,0 +1,19 @@
+<form [formGroup]="loginForm" name="loginForm" method="post" (submit)="login(loginForm.value)">
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" [ngModel]="uname" required formControlName="uname">
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" [ngModel]="psw" required formControlName="psw">
+    <h4 style="color: red" [hidden]="isValid" >Invalid username or password</h4>
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
