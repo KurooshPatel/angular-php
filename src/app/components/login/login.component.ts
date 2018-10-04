@@ -27,14 +27,12 @@ export class LoginComponent implements OnInit {
 
   }
   login(values){
-    console.log('hello',values);
     this.loginService.login(values.uname,values.psw).subscribe(users=>{
-      if(users.first_name){
+      if(users.email== values.uname){
         this.router.navigate(["user/profile"]);
       }else{
-        this.isValid=false
+        this.isValid=false;
       }
-
     });
   }
 }
