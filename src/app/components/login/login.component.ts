@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
 
     this.loginService.login(values.uname,values.psw).subscribe(users=>{
       if(users.email== values.uname){
+
         localStorage.setItem('isLoggedIn', "true");
         this.router.navigate(["home"]);
       }else{

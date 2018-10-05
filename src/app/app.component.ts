@@ -10,7 +10,9 @@ export class AppComponent implements OnInit{
   isLoggedIn='';
 
   ngOnInit(){
+
+  }
+  changeOfRoutes(){
     this.isLoggedIn=localStorage.getItem('isLoggedIn');
-    console.log(this.isLoggedIn,"app");
   }
 }

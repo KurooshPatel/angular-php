@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, router, RouterModule} from '@angular/router';
+import {Router, RouterModule} from '@angular/router';
 import {LoginService} from '../../services/login.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class LogoutComponent implements OnInit {
   constructor( private router:Router) { }
 
   ngOnInit() {
-    localStorage.setItem('isLoggedIn',false);
+    localStorage.setItem('isLoggedIn','false');
     this.router.navigate(['login']);
   }
 

@@ -6,8 +6,8 @@
       <a class="nav-item nav-link cursor" routerLink="/home" routerLinkActive="active">Home</a>
       <a class="nav-item nav-link cursor" routerLink="/about" routerLinkActive="active">About</a>
       <a class="nav-item nav-link cursor" routerLink="/contact-us" routerLinkActive="active">Contact</a>
-      <a class="nav-item nav-link cursor" routerLink="/login" routerLinkActive="active" *ngIf="!isLoggedIn">Login</a>
-      <a class="nav-item nav-link cursor" routerLink="/logout" routerLinkActive="active" *ngIf="isLoggedIn">Logout</a>
+      <a class="nav-item nav-link cursor" routerLink="/login" routerLinkActive="active" *ngIf="isLoggedIn=='false'">Login</a>
+      <a class="nav-item nav-link cursor" routerLink="/logout" routerLinkActive="active" *ngIf="isLoggedIn=='true'">Logout</a>
     </div>
   </div>
   <div class="navbar-expand ml-auto navbar-nav">
@@ -26,12 +26,8 @@
 </nav>
 
 <app-layout>
-  <div class="jumbotron">
-    <h1>Angular CLI v6 + Bootstrap & FontAwesome</h1>
-    <p>
-      <router-outlet></router-outlet>
 
-      In this tutorial you learn how to use Angular CLI v6 with Bootstrap and FontAwesome!
-    </p>
-  </div>
+      <router-outlet (activate)="changeOfRoutes()"></router-outlet>
+
+
 </app-layout>
