@@ -6,9 +6,12 @@ import { AppComponent } from './app.component';
 // import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'user/profile', loadChildren : './components/login/login.module#LoginModule'},
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: 'home', loadChildren : './components/home/home.module#HomeModule'},
+  { path: 'about', loadChildren : './components/about/about.module#AboutModule'},
+  { path: 'contact-us', loadChildren : './components/contact-us/contact-us.module#ContactUsModule'},
   { path: 'login', loadChildren : './components/login/login.module#LoginModule'},
+  { path: 'logout', loadChildren : './components/logout/logout.module#LogoutModule'},
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
