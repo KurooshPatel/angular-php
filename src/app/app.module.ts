@@ -7,14 +7,16 @@ import { AppComponent } from './app.component';
 import { LoginService } from './services/login.service';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
+import { UiModule } from './ui/ui.module';
 
 @NgModule({
   declarations: [
     AppComponent
+
     // LoginComponent
   ],
   imports: [
-    BrowserModule, HttpModule, AppRoutingModule, SharedModule
+    BrowserModule, HttpModule, AppRoutingModule, SharedModule, UiModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]

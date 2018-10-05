@@ -1,2 +1,37 @@
 
-<router-outlet></router-outlet>
+<nav class="navbar navbar-dark bg-dark mb-5">
+  <a class="navbar-brand" href="/">Angular & Bootstrap</a>
+  <div class="navbar-expand mr-auto">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link cursor" routerLink="/home" routerLinkActive="active">Home</a>
+      <a class="nav-item nav-link cursor" routerLink="/about" routerLinkActive="active">About</a>
+      <a class="nav-item nav-link cursor" routerLink="/contact-us" routerLinkActive="active">Contact</a>
+      <a class="nav-item nav-link cursor" routerLink="/login" routerLinkActive="active" *ngIf="!isLoggedIn">Login</a>
+      <a class="nav-item nav-link cursor" routerLink="/logout" routerLinkActive="active" *ngIf="isLoggedIn">Logout</a>
+    </div>
+  </div>
+  <div class="navbar-expand ml-auto navbar-nav">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="https://github.com/beeman" target="_blank">
+        <i class="fa fa-github"></i>
+      </a>
+      <a class="nav-item nav-link" href="https://twitter.com/beeman_nl" target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a class="nav-item nav-link" href="https://medium.com/@beeman" target="_blank">
+        <i class="fa fa-medium"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<app-layout>
+  <div class="jumbotron">
+    <h1>Angular CLI v6 + Bootstrap & FontAwesome</h1>
+    <p>
+      <router-outlet></router-outlet>
+
+      In this tutorial you learn how to use Angular CLI v6 with Bootstrap and FontAwesome!
+    </p>
+  </div>
+</app-layout>
